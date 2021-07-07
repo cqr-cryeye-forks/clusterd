@@ -42,6 +42,9 @@ ssl = False
 # filename for logging to file
 flog = None
 
+# show-os flag
+show_os = False
+
 # for deployers that need to serve files to remote hosts,
 # we copy payloads into this location and clean it at
 # the end 

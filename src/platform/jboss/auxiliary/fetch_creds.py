@@ -37,7 +37,7 @@ class Auxiliary:
         URLs.
         """
 
-        utility.Msg("Attempting to retrieve jmx-console credentials...")
+        # utility.Msg("Attempting to retrieve jmx-console credentials...")
 
         request = "GET %{0} HTTP/1.0\r\n".format(self._getPath(fingerprint.version))
 

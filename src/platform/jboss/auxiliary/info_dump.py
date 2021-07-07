@@ -25,7 +25,7 @@ class Auxiliary:
         info, which also happens to give us quite a bit more.
         """
 
-        utility.Msg("Attempting to retrieve JBoss info...")
+        # utility.Msg("Attempting to retrieve JBoss info...")
 
         if fingerprint.version in ["7.0", "7.1", "8.0", "8.1"]:
             # JBoss 7.x uses an HTTP API instead of jmx-console/

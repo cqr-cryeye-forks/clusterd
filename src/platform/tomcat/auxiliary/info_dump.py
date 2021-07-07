@@ -27,7 +27,7 @@ class Auxiliary:
 
     def run(self, fingerengine, fingerprint):
 
-        utility.Msg("Attempting to retrieve Tomcat info...")
+        # utility.Msg("Attempting to retrieve Tomcat info...")
         base = "http://{0}:{1}".format(fingerengine.options.ip,
                                        fingerprint.port)
         relative = '/manager/serverinfo'

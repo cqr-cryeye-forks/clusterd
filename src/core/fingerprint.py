@@ -37,8 +37,8 @@ class FingerEngine:
                 if fp.version is not "Any" and self.options.version not in fp.version:
                     continue
 
-            utility.Msg("Checking %s version %s %s..." % (fp.platform,
-                                    fp.version, fp.title))
+            # utility.Msg("Checking %s version %s %s..." % (fp.platform,
+            #                         fp.version, fp.title))
 
             try:
                 if fp.check(ip, port):
@@ -49,7 +49,8 @@ class FingerEngine:
                     match_fps.append(fp)
             except Exception, e:
                 utility.Msg("Exception with fingerprint: %s" % e, LOG.DEBUG)
-        
+            if len(match_fps) == 0:
+                utility.Msg("%s not found!" % fp.platform)
             if self.options.delay:
                 sleep(int(self.options.delay))
 
@@ -79,7 +80,7 @@ class FingerEngine:
         """ Kicks off the fingerprint engine
         """
 
-        utility.Msg("Fingerprinting host '%s'" % self.options.ip, LOG.UPDATE)
+        # utility.Msg("Fingerprinting host '%s'" % self.options.ip, LOG.UPDATE)
         state.hasbf = False
 
         if self.options.remote_service:
@@ -90,7 +91,7 @@ class FingerEngine:
                return False
 
             self.service = self.options.remote_service
-            utility.Msg("Server hinted at '%s'" % self.options.remote_service)
+            # utility.Msg("Server hinted at '%s'" % self.options.remote_service)
 
 
         # if a service was hinted at, load and test it

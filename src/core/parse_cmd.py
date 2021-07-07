@@ -115,6 +115,8 @@ def parse(arguments):
                     dest='debug', default=False)
     other.add_argument("-l", help='Log output to file [$time$_log.log]',
                     dest='flog', action='store_true', default=False)
+    other.add_argument("--show-os", help="If True show servers' os. Default False",
+                    dest='show_os', action='store_true', default=False)
 
     # parse cli options
     options = parser.parse_args(arguments)
@@ -148,6 +150,9 @@ def parse(arguments):
 
     if options.listener:
         state.listener = options.listener
+
+    if options.show_os:
+        state.show_os = True
 
     state.ssl = options.ssl
     state.bf_user = options.bf_user

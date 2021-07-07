@@ -30,7 +30,7 @@ class Auxiliary:
         if fingerprint.version in ["5.0", "6.0", "6.1"]:
             return self._run5(fingerengine, fingerprint)
 
-        utility.Msg("Attempting to retrieve Coldfusion info...")
+        # utility.Msg("Attempting to retrieve Coldfusion info...")
 
         base = "http://{0}:{1}".format(fingerengine.options.ip, fingerprint.port)
         uri = "/CFIDE/administrator/reports/index.cfm"
@@ -81,7 +81,7 @@ class Auxiliary:
         """ Pull sys info from older CF instances; it is quite ugly
         """
 
-        utility.Msg("Attempting to retrieve Coldfusion info...")
+        # utility.Msg("Attempting to retrieve Coldfusion info...")
 
         cookies = checkAuth(fingerengine.options.ip, fingerprint.port,
                             fingerprint.title, fingerprint.version)[0]

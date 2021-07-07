@@ -25,7 +25,7 @@ class Auxiliary:
         http://www.exploit-db.com/exploits/12721/
         """
 
-        utility.Msg("Attempting to retrieve admin username and password...")
+        # utility.Msg("Attempting to retrieve admin username and password...")
 
         base = 'http://{0}:{1}'.format(fingerengine.options.ip, fingerprint.port)
         uri = '/axis2/services/Version?xsd=../conf/axis2.xml'

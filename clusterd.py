@@ -83,7 +83,8 @@ def run(options):
         else:
             servers.append(options.ip)
 
-    utility.Msg("Servers' OS hinted at %s" % options.remote_os)
+    if state.show_os:
+        utility.Msg("Servers' OS hinted at %s" % options.remote_os)
     # iterate through all servers, fingerprint and load auxengine
     for server in servers:
         fingerengine = FingerEngine()
@@ -94,25 +95,25 @@ def run(options):
         if len(fingerengine.fingerprints) is 0:
             continue
 
-        utility.Msg("Fingerprinting completed.", LOG.UPDATE)
+        # utility.Msg("Fingerprinting completed.", LOG.UPDATE)
 
         # We've got the host fingerprinted, now kick off the
         # exploitation engine for the service
-        utility.Msg("Loading auxiliary for '%s'..." % fingerengine.service,
-                                                      LOG.DEBUG)
+        # utility.Msg("Loading auxiliary for '%s'..." % fingerengine.service,
+        #                                               LOG.DEBUG)
 
         # execute the auxiliary engine
         auxengine(fingerengine)
 
 if __name__ == "__main__":
 
-    utility.header()
+    # utility.header()
     options = parse(sys.argv[1:])
 
     # set platform
     state.platform = platform.system().lower()
 
-    utility.Msg("Started at %s" % (utility.timestamp()))
+    # utility.Msg("Started at %s" % (utility.timestamp()))
 
     # log the CLI args
     utility.log(' '.join(sys.argv))
@@ -127,4 +128,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         pass
 
-    utility.Msg("Finished at %s" % (utility.timestamp()))
+    # utility.Msg("Finished at %s" % (utility.timestamp()))

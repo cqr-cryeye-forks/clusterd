@@ -150,6 +150,7 @@ Other:
   --listen [adapter]    Adapter to listen on when needed
   -d                    Enable debug output
   -l                    Log output to file [$time$_log.log]
+  --show-os             If True show servers' os. Default False 
 ```
 
 jboss fingerprint and host info

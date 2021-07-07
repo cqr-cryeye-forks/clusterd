@@ -23,7 +23,7 @@ class Auxiliary:
         """ Dump host OS info from a railo server
         """
 
-        utility.Msg("Attempting to retrieve Railo info...")
+        # utility.Msg("Attempting to retrieve Railo info...")
 
         base = 'http://{0}:{1}'.format(fingerengine.options.ip, fingerprint.port)
 

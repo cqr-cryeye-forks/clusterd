@@ -18,7 +18,7 @@ class Auxiliary:
         """ Dump information about the remote Axis2 server
         """
 
-        utility.Msg("Attempting to retrieve Axis2 info...")
+        # utility.Msg("Attempting to retrieve Axis2 info...")
 
         base = "http://{0}:{1}".format(fingerengine.options.ip, fingerprint.port)
         uri = '/axis2/axis2-web/HappyAxis.jsp'

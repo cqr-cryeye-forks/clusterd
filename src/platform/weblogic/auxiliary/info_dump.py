@@ -19,10 +19,10 @@ class Auxiliary:
 
         cookies = checkAuth(fingerengine.options.ip, fingerprint)
         if not cookies[0]:
-            utility.Msg("This module requires valid credentials.", LOG.ERROR)
+            # utility.Msg("This module requires valid credentials.", LOG.ERROR)
             return
 
-        utility.Msg("Attempting to retrieve WebLogic info...")
+        # utility.Msg("Attempting to retrieve WebLogic info...")
 
         base = "http://{0}:{1}".format(fingerengine.options.ip, fingerprint.port)
         if fingerprint.title is WINTERFACES.WLS:

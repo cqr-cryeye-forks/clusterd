@@ -19,7 +19,7 @@ def Msg(string, level=LOG.INFO):
     Currently we only support color output on Linux systems.
     """
 
-    output = "[%s] %s" % (timestamp(), string)
+    output = "%s" % string
     if state.platform == 'linux':
        
         if level is LOG.INFO:
@@ -49,7 +49,7 @@ def log(string):
 
     if state.flog:
         with open(state.flog, 'a+') as f:
-            f.write('[%s] %s\n' % (timestamp(), string))
+            f.write('%s\n' %  string)
 
 
 def header():
